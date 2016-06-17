@@ -1,0 +1,328 @@
+2016-06-16 20:48:42 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+' in D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Connection.php:579
+Stack trace:
+#0 D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Connection.php(579): PDO->__construct('mysql:host=120....', 'root', 'admin', NULL)
+#1 D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#3 D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Command.php(216): yii\db\Connection->getSlavePdo()
+#5 D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Command.php(831): yii\db\Command->prepare('<span class="ke...')
+#6 D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\php8\ceshi_project\controllers\UserController.php(27): yii\db\Command->queryAll()
+#8 [internal function]: app\controllers\UserController->actionIndex()
+#9 D:\php8\ceshi_project\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#10 D:\php8\ceshi_project\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#11 D:\php8\ceshi_project\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#12 D:\php8\ceshi_project\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#13 D:\php8\ceshi_project\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 D:\php8\ceshi_project\web\index.php(12): yii\base\Application->run()
+#15 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+' in D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Connection.php:534
+Stack trace:
+#0 D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#1 D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Command.php(216): yii\db\Connection->getSlavePdo()
+#3 D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Command.php(831): yii\db\Command->prepare('<span class="ke...')
+#4 D:\php8\ceshi_project\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\php8\ceshi_project\controllers\UserController.php(27): yii\db\Command->queryAll()
+#6 [internal function]: app\controllers\UserController->actionIndex()
+#7 D:\php8\ceshi_project\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#8 D:\php8\ceshi_project\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#9 D:\php8\ceshi_project\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#10 D:\php8\ceshi_project\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#11 D:\php8\ceshi_project\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\php8\ceshi_project\web\index.php(12): yii\base\Application->run()
+#13 {main}
+Additional Information:
+
+2016-06-16 20:48:20 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'user/index'
+]
+
+$_POST = [
+    'u_name' => 'lisi'
+    'u_pwd' => '123456'
+]
+
+$_COOKIE = [
+    'ECS' => [
+        'visit_times' => '111'
+        'username' => 'anyuanfu'
+        'email' => '123@163.com'
+        'user_id' => '3'
+        'password' => '1b8301d816d619c0016bd6c8d883fd2d'
+    ]
+    '1Iaq_2132_saltkey' => 'Q1bKo3T6'
+    '1Iaq_2132_lastvisit' => '1464390829'
+    'pgv_pvi' => '7330412544'
+    'a53d___uniacid' => '2'
+    'a53d___uid' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.php8.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.php8.com/ceshi_project/web/'
+    'HTTP_COOKIE' => 'ECS[visit_times]=111; ECS[username]=anyuanfu; ECS[email]=123%40163.com; 1Iaq_2132_saltkey=Q1bKo3T6; 1Iaq_2132_lastvisit=1464390829; pgv_pvi=7330412544; ECS[user_id]=3; ECS[password]=1b8301d816d619c0016bd6c8d883fd2d; a53d___uniacid=2; a53d___uid=1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '24'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;G:\\web\\php\\;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\tools\\svn\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.php8.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/php8'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/php8'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/php8/ceshi_project/web/index.php'
+    'REMOTE_PORT' => '62190'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=user/index'
+    'REQUEST_URI' => '/ceshi_project/web/index.php?r=user/index'
+    'SCRIPT_NAME' => '/ceshi_project/web/index.php'
+    'PHP_SELF' => '/ceshi_project/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466081300.077
+    'REQUEST_TIME' => 1466081300
+]
+2016-06-16 21:22:47 [221.221.153.133][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'120.26.245.186' (using password: YES)' in /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=120....', 'root', 'admin', NULL)
+#1 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#5 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare('<span class="ke...')
+#6 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 /data/wwwroot/default/ceshi_project/controllers/UserController.php(27): yii\db\Command->queryAll()
+#8 [internal function]: app\controllers\UserController->actionIndex()
+#9 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#10 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#11 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#12 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#13 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 /data/wwwroot/default/ceshi_project/web/index.php(12): yii\base\Application->run()
+#15 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'120.26.245.186' (using password: YES)' in /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#3 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare('<span class="ke...')
+#4 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 /data/wwwroot/default/ceshi_project/controllers/UserController.php(27): yii\db\Command->queryAll()
+#6 [internal function]: app\controllers\UserController->actionIndex()
+#7 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#8 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#9 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#10 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#11 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /data/wwwroot/default/ceshi_project/web/index.php(12): yii\base\Application->run()
+#13 {main}
+Additional Information:
+
+2016-06-16 21:22:47 [221.221.153.133][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 221.221.153.133
+2016-06-16 21:22:47 [221.221.153.133][-][-][info][application] $_GET = [
+    'r' => 'user/index'
+]
+
+$_POST = [
+    'u_name' => 'lisi'
+    'u_pwd' => '123456'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '120.26.245.186'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://120.26.245.186/ceshi_project/web/index.php'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '24'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'LD_LIBRARY_PATH' => '/usr/local/apache/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => '120.26.245.186'
+    'SERVER_ADDR' => '120.26.245.186'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '221.221.153.133'
+    'DOCUMENT_ROOT' => '/data/wwwroot/default'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/wwwroot/default'
+    'SERVER_ADMIN' => 'admin@linuxeye.com'
+    'SCRIPT_FILENAME' => '/data/wwwroot/default/ceshi_project/web/index.php'
+    'REMOTE_PORT' => '63552'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=user/index'
+    'REQUEST_URI' => '/ceshi_project/web/index.php?r=user/index'
+    'SCRIPT_NAME' => '/ceshi_project/web/index.php'
+    'PHP_SELF' => '/ceshi_project/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466083367.629
+    'REQUEST_TIME' => 1466083367
+]
+2016-06-16 21:23:55 [114.249.213.107][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'120.26.245.186' (using password: YES)' in /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=120....', 'root', 'admin', NULL)
+#1 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#5 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare('<span class="ke...')
+#6 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 /data/wwwroot/default/ceshi_project/controllers/UserController.php(27): yii\db\Command->queryAll()
+#8 [internal function]: app\controllers\UserController->actionIndex()
+#9 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#10 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#11 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#12 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#13 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 /data/wwwroot/default/ceshi_project/web/index.php(12): yii\base\Application->run()
+#15 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'120.26.245.186' (using password: YES)' in /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#3 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare('<span class="ke...')
+#4 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 /data/wwwroot/default/ceshi_project/controllers/UserController.php(27): yii\db\Command->queryAll()
+#6 [internal function]: app\controllers\UserController->actionIndex()
+#7 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#8 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#9 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#10 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#11 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /data/wwwroot/default/ceshi_project/web/index.php(12): yii\base\Application->run()
+#13 {main}
+Additional Information:
+
+2016-06-16 21:23:55 [114.249.213.107][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 114.249.213.107
+2016-06-16 21:23:55 [114.249.213.107][-][-][info][application] $_GET = [
+    'r' => 'user/index'
+]
+
+$_POST = [
+    'u_name' => 'lisi'
+    'u_pwd' => '123456'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '120.26.245.186'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://120.26.245.186/ceshi_project/web/index.php'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '24'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'LD_LIBRARY_PATH' => '/usr/local/apache/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => '120.26.245.186'
+    'SERVER_ADDR' => '120.26.245.186'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '114.249.213.107'
+    'DOCUMENT_ROOT' => '/data/wwwroot/default'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/wwwroot/default'
+    'SERVER_ADMIN' => 'admin@linuxeye.com'
+    'SCRIPT_FILENAME' => '/data/wwwroot/default/ceshi_project/web/index.php'
+    'REMOTE_PORT' => '63581'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=user/index'
+    'REQUEST_URI' => '/ceshi_project/web/index.php?r=user/index'
+    'SCRIPT_NAME' => '/ceshi_project/web/index.php'
+    'PHP_SELF' => '/ceshi_project/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466083435.03
+    'REQUEST_TIME' => 1466083435
+]
+2016-06-16 21:25:24 [221.221.153.133][-][990rka9qlqao74mqaj2b663mu3][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "publicaccount/show".' in /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Module.php:461
+Stack trace:
+#0 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('publicaccount/s...', Array)
+#1 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/wwwroot/default/ceshi_project/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /data/wwwroot/default/ceshi_project/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/wwwroot/default/ceshi_project/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2016-06-16 21:25:25 [221.221.153.133][-][990rka9qlqao74mqaj2b663mu3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 221.221.153.133
+    in /data/wwwroot/default/ceshi_project/views/layouts/main.php:70
+2016-06-16 21:25:24 [221.221.153.133][-][990rka9qlqao74mqaj2b663mu3][info][application] $_GET = [
+    'r' => 'publicaccount/show'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '990rka9qlqao74mqaj2b663mu3'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'u_id' => '4'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '120.26.245.186'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://120.26.245.186/ceshi_project/web/index.php'
+    'HTTP_COOKIE' => 'PHPSESSID=990rka9qlqao74mqaj2b663mu3'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'LD_LIBRARY_PATH' => '/usr/local/apache/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => '120.26.245.186'
+    'SERVER_ADDR' => '120.26.245.186'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '221.221.153.133'
+    'DOCUMENT_ROOT' => '/data/wwwroot/default'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/data/wwwroot/default'
+    'SERVER_ADMIN' => 'admin@linuxeye.com'
+    'SCRIPT_FILENAME' => '/data/wwwroot/default/ceshi_project/web/index.php'
+    'REMOTE_PORT' => '63651'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=publicaccount/show'
+    'REQUEST_URI' => '/ceshi_project/web/index.php?r=publicaccount/show'
+    'SCRIPT_NAME' => '/ceshi_project/web/index.php'
+    'PHP_SELF' => '/ceshi_project/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466083524.982
+    'REQUEST_TIME' => 1466083524
+]
