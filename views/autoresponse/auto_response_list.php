@@ -137,7 +137,7 @@
                 <?php
                 foreach($content as $k=>$v){
                     ?>
-                    <tr id="<?php echo $v['ar_id']?>">
+                    <tr id="ids<?php echo $v['ar_id'] ?>">
                         <td id="ars"><?php echo $v['ar_id'] ?></td>
                         <td><?php echo $v['pa_id'] ?></td>
                         <td><?php echo $v['ar_rule_name'] ?></td>
@@ -168,22 +168,21 @@
 <!-- /wrap_right -->
 </body>
 </html>
-<script src="jquery-2.1.4.min.js"></script>
 <script>
-    <script>
-        //删除
+     //删除
     function check_del(ids)
     {
-        alert(ids);
-//        $.ajax({
-//            type: "POST",
-//            url: "index.php?r=autoresponse/dels",
-//            data: "ar_id="+ids,
-//            success:function(msg){
-//                $("#ids"+ids).remove();
-//            }
-//        });
+        //alert(ids);
+        $.ajax({
+            type: "POST",
+            url: "index.php?r=autoresponse/dels",
+            data: "ar_id="+ids,
+            success:function(msg){
+				//alert(msg);
+                $("#ids"+ids).remove();
+            }
+        });
     }
-</script>
+
 
 </script>
