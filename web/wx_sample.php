@@ -2,18 +2,26 @@
 /**
   * wechat php test
   */
+header("content-type:text/html;charset=utf-8");
 $pat_hash=$_GET['hash'];
-$pdo = new PDO('mysql:host=127.0.0.1;dbname=we08e','root','admin');
+$keyword="123";
+//echo $pat_hash;die;
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=we7','root','root');//,array(PDO::MYSQL_ATTR_INIT_COMMAND=>'set names utf8')
 $pdo -> exec('set names utf8');
-/*¸ù¾Ý¹þÏ£ÕÒµ½Ò»¶¨µÄ¹«ÖÚºÅÆ¥Åä*/
+/*ï¿½ï¿½Ý¹ï¿½Ï£ï¿½Òµï¿½Ò»ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½Úºï¿½Æ¥ï¿½ï¿½*/
 $data = $pdo -> query("select * from we_public_account_token where pat_hash = '$pat_hash'") -> fetch(PDO::FETCH_ASSOC);
 $id=$data['pa_id'];
-/*²éÑ¯µ±Ç°¹«ÖÚºÅµÄÎÄ×Ö»Ø¸´*/
+//print_r($data);die;
+/*ï¿½ï¿½Ñ¯ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ÚºÅµï¿½ï¿½ï¿½ï¿½Ö»Ø¸ï¿½*/
 $arr = $pdo -> query("select * from we_auto_response where pa_id = '$id'") -> fetch(PDO::FETCH_ASSOC);
 define("TOKEN", "$data[pat_token]");
+//print_r($arr);die;
+
+/*$con=$pdo->query("select * from we_auto_response where ar_wd = '$keyword'")->fetch(PDO::FETCH_ASSOC);
+$contentStr = $con['ar_content'];
+print_r($contentStr);die;*/
 $wechatObj = new wechatCallbackapiTest();
 $wechatObj->valid();
-
 class wechatCallbackapiTest
 {
 	public function valid()
@@ -52,10 +60,12 @@ class wechatCallbackapiTest
 							</xml>";             
 				if(!empty( $keyword ))
                 {
-			$con=$pdo->query("select * from we_auto_response where ar_wd like '%$keyword%'")->fetch(PDO::FETCH_ASSOC);
+                    $pdo = new PDO('mysql:host=127.0.0.1;dbname=we7','root','root');
+			        $con=$pdo->query("select * from we_auto_response where ar_wd = '$keyword'")->fetch(PDO::FETCH_ASSOC);
               		$msgType = "text";
-                	$contentStr = "Welcome to wechat world!";
-			$contentStr = $con[0]['ar_content'];
+                	//$contentStr = "Welcome to wechat world!";
+			        $contentStr = $con['ar_content'];
+                    //print_r($con);die;
                 	$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                 	echo $resultStr;
                 }else{

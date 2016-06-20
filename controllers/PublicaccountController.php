@@ -56,7 +56,7 @@ class PublicaccountController extends Controller
                     $pat_token.= $string[rand(0,strlen($string)-1)];
                 }
                 $pat_hash="";
-                for ($i=0; $i < 5; $i++)//随机生成一个5位的hash
+                for ($j=0; $j < 5; $j++)//随机生成一个5位的hash
                 {
                     $pat_hash.= $string[rand(0,strlen($string)-1)];
                 }

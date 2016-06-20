@@ -19,7 +19,11 @@ class UserController extends Controller
     {
         $method =  Yii::$app->request->method;
         if($method != 'POST') {
-            return $this->render('login');
+            if(!file_exists('../web/install/install.lock')){
+                echo "<script>location.href='install/install.php'</script>";
+            }else{
+                return $this->render('login');
+            }
         }else{
             $data = Yii::$app->request->post();
             $pwd = md5($data['u_pwd']);
