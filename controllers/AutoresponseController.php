@@ -61,4 +61,57 @@ class AutoresponseController extends Controller
             }
         }
     }
+      //删除
+    public function actionDels()
+    {
+
+     $request = Yii::$app->request;
+     $ar_id = $request->post('ar_id'); 
+     //print_r($ar_id);die;
+     $connection = \Yii::$app->db;
+      $command = $connection->createCommand("delete from we_auto_response where ar_id='$ar_id'");
+     $re=$command->execute();
+     if($re)
+      {
+        echo 1;
+      }
+     }
+      //显示修改页面
+    public function actionUpdates()
+    {
+        $request = Yii::$app->request;
+        $id = $request->get('id');
+        //print_r($id);die;
+        $connection = \Yii::$app->db;
+        $command = $connection->createCommand("SELECT * FROM we_auto_response where ar_id='$id'");
+        $data = $command->queryAll();
+       return $this->renderPartial('auto_response_update',['data'=>$data]);
+    }
+      //操作修改
+    public function actionUpdate()
+    {
+        $request = Yii::$app->request;
+        $post = $request->post(); 
+       $id=$post['hid'];
+        $ar_rule_name=$post['m_rule_name'];
+        $ar_type=$post['m_rule_type'];
+        $ar_wd=$post['m_wd'];
+        $ar_content=$post['m_content'];
+        $connection=\Yii::$app->db;
+        // UPDATE
+        $request=$connection->createCommand()->update('we_auto_response', [
+            'ar_rule_name' => $ar_rule_name,
+            'ar_type' =>$ar_type,
+            'ar_wd' =>$ar_wd,
+            'ar_content' =>$ar_content
+            ], "ar_id='$id'")->execute();
+        if($request)
+        {
+            echo "<script>alert('修改成功');location.href='index.php?r=autoresponse/show'</script>";
+        }
+        else
+        {
+            echo "<script>alert('修改失败');location.href='index.php?r=autoresponse/updates'</script>";
+        }
+ }
 }
