@@ -137,17 +137,16 @@
                 <?php
                 foreach($content as $k=>$v){
                     ?>
-                    <tr id="<?php echo $v['ar_id']?>">
+                    <tr id="ids<?php echo $v['ar_id'] ?>">
                         <td id="ars"><?php echo $v['ar_id'] ?></td>
                         <td><?php echo $v['pa_id'] ?></td>
                         <td><?php echo $v['ar_rule_name'] ?></td>
                         <td><?php echo $v['ar_type'] ?></td>
                         <td><?php echo $v['ar_wd'] ?></td>
                         <td><?php echo $v['ar_content'] ?></td>
-                        <td><a href="javascript:void(0);" onclick="check_del(<?php echo $v['ar_id']?>);">删除</a> |
-                            <a href="index.php?r=autoresponse/updates&id=<?php echo $v['ar_id'] ?>">修改</a></td>
-
-                    </tr>
+                          <td><a href="javascript:void(0);" onclick="check_del(<?php echo $v['ar_id']?>);">删除</a> | 
+                        <a href="index.php?r=autoresponse/updates&id=<?php echo $v['ar_id'] ?>">修改</a></td> 
+                </tr>
                 <?php
                 }
                 ?>
@@ -168,22 +167,19 @@
 <!-- /wrap_right -->
 </body>
 </html>
-<script src="jquery-2.1.4.min.js"></script>
 <script>
-    <script>
-        //删除
+  //删除
     function check_del(ids)
     {
-        alert(ids);
-//        $.ajax({
-//            type: "POST",
-//            url: "index.php?r=autoresponse/dels",
-//            data: "ar_id="+ids,
-//            success:function(msg){
-//                $("#ids"+ids).remove();
-//            }
-//        });
+        //alert(ids);
+       $.ajax({
+        type: "POST",
+           url: "index.php?r=autoresponse/dels",
+           data: "ar_id="+ids,
+           success:function(msg){
+            //alert(msg);
+             $("#ids"+ids).remove();
+            }
+        });
     }
-</script>
-
 </script>
