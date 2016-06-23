@@ -192,14 +192,14 @@ function install_sql()
 	}
 
 	//检测SQL安装文件
-	$sql_file = ROOT_PATH.'./install/we7.sql';
+	$sql_file = ROOT_PATH.'./install/wuzu.sql';
 	if(!file_exists($sql_file))
 	{
 		showProgress(array('isError' => true,'message' => '安装的SQL文件'.basename($sql_file).'不存在'));
 	}
 
 	//检测测试数据SQL文件
-	$sql_test_file = ROOT_PATH.'./install/we7.sql';
+	$sql_test_file = ROOT_PATH.'./install/wuzu.sql';
 	if($install_type == 'all' && !file_exists($sql_test_file))
 	{
 		showProgress(array('isError' => true,'message' => '测试数据SQL文件'.basename($sql_test_file).'不存在'));
