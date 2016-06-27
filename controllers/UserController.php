@@ -17,7 +17,7 @@ class UserController extends Controller
 
     public function actionInstall()
     {
-        $filename = 'install/install.lock';
+        $filename = 'install.lock';
         if(file_exists($filename)){
             return $this->render('login');
         }else{
