@@ -15,15 +15,15 @@ class UserController extends Controller
     public $layout=false; //禁用yii自带样式
     public $enableCsrfValidation = false; //表单跳转，禁用 CSRF 验证
 
-    public function actionInstall()
-    {
-        $filename = 'install.lock';
-        if(file_exists($filename)){
-            return $this->render('login');
-        }else{
+    public function actionInstall(){
+       $fileName="install.lock";
+        if(file_exists($fileName)) {
+            echo "<script>;location.href='index.php?r=user/index'</script>";
+         } else{
             echo "<script>alert('您还未安装，请先安装');location.href='install.php'</script>";
-        }
+         }
     }
+
 
     //执行用户登录处理
 	public function actionIndex()
