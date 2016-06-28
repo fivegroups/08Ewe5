@@ -7,6 +7,7 @@ $db_pre=$_POST['db_pre'];
 $u_name=$_POST['u_name'];
 //$u_pwd=$_POST['u_pwd'];
 $u_pwd=md5($_POST['u_pwd']);
+$pdo=$pdo;
 /*
 echo $db_address;
 echo $db_name;
