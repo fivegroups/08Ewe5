@@ -7,7 +7,7 @@ $db_pre=$_POST['db_pre'];
 $u_name=$_POST['u_name'];
 //$u_pwd=$_POST['u_pwd'];
 $u_pwd=md5($_POST['u_pwd']);
-$pdo=$pdo;
+$a="$pdo";
 /*
 echo $db_address;
 echo $db_name;
@@ -32,7 +32,7 @@ $str="insert into we_user(u_name,u_pwd) VALUE ('$u_name','$u_pwd')";
 $arr=mysql_query($str);
 $a="<?php return ['class' => 'yii\db\Connection','dsn' => 'mysql:host=$db_address;dbname=$db_name','username' => '$db_user','password' => '$db_pwd','charset' => 'utf8',];";
 $file=file_put_contents('../config/db.php',$a);
-$b="<?php $pdo = new PDO('mysql:host=$db_address;dbname=$db_name','$db_user','$db_pwd');$pdo -> exec('set names utf8');";
+$b="<?php $a = new PDO('mysql:host=$db_address;dbname=$db_name','$db_user','$db_pwd');$a -> exec('set names utf8');";
 $content=file_put_contents('../web/pdo.php',$b);
   if(!empty($file)){
      echo 1;
